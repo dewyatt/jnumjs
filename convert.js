@@ -81,12 +81,12 @@ function Convert(numerals, minus, point, exceptions, number) {
 function convertNumber(system, number)
 {
     if (!NumberSystems[system])
-        return "Unsupported number system 'system'<br />";
+        return "Unsupported number system";
 
     var snumber = number;
     number = +number;
     if (isNaN(number))
-        return "'number' is not numeric<br />";
+        return "Input is not numeric";
 
     var result = "";
 
