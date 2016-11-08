@@ -8,7 +8,7 @@ This code was rapidly adapted from old PHP code I wrote in college many years ag
 
 # Usage
 
-See test.html.
+See index.html.
 Generally it should be used like:
 
 ```js
