@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Japanese Number Conversion</title>
+
+  <script src="systems.js"></script>
+  <script src="convert.js"></script>
+</head>
+<body>
+
+<script>
+function updateOutput() {
+  var inputEl = document.getElementById('number-input');
+  var resultsEl = document.getElementById('results');
+
+  var input = inputEl.value;
+  var results = '';
+
+  ['Kanji', 'Hiragana', 'Katakana', 'Hepburn'].map(function (system) {
+    var result = convertNumber(system, input);
+    results += '<div>' + system + '</div>';
+    results += '<div>' + result + '</div>';
+    results += '<br />';
+  });
+  resultsEl.innerHTML = results;
+}
+
+function onInputNumber(event) {
+  updateOutput();
+}
+</script>
+
+<input id='number-input' type='number' onInput='onInputNumber(event);' autofocus />
+<div id='results'></div>
+
+</body>
+</html>
+
