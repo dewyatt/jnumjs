@@ -98,14 +98,14 @@ function convertNumber(system, number)
 
     if (number < 0)
         result = minus + " ";
-    
+
     number = Math.abs(number);
     var decimal = snumber.indexOf(".");
     if (decimal != -1)
     {
         var first = snumber.substring(0, decimal);
         var second = snumber.substring(decimal + 1);
-        result += Convert(numerals, minus, point, exceptions, first, 0);
+        result += Convert(numerals, minus, point, exceptions, Math.abs(+first), 0);
         result += " " + point + " ";
         for (i = 0; i < second.length; i += 1)
         {
@@ -116,7 +116,7 @@ function convertNumber(system, number)
         result = result.trim();
     }
     else {
-        result = Convert(numerals, minus, point, exceptions, number, 0);
+        result += Convert(numerals, minus, point, exceptions, Math.abs(number), 0);
     }
 
     return result;
